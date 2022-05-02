@@ -9,13 +9,13 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc
 RUN wget -qO - https://packages.sury.org/php/apt.gpg | apt-key add -
 
 # Node + Yarn
-RUN curl -sL https://deb.nodesource.com/setup_14.x -o /tmp/nodesource_setup.sh \
+RUN curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh \
     && bash /tmp/nodesource_setup.sh \
     && rm /tmp/nodesource_setup.sh
 
 # Install packages
 # pdo to run unit tests with sqlite
-RUN apt update && apt install -y php8.0 php8.0-curl php8.0-xml php8.0-mbstring php8.0-pdo php8.0-sqlite3 php8.0-gd php8.0-zip php8.0-imagick \
+RUN apt update && apt install -y php8.1 php8.1-curl php8.1-xml php8.1-mbstring php8.1-pdo php8.1-sqlite3 php8.1-gd php8.1-zip php8.1-imagick \
     && apt-get install --quiet --yes --no-install-recommends nodejs \
     && npm install yarn --global \
     && npm install -g bower \
