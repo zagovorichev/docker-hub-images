@@ -15,7 +15,7 @@ RUN curl -sL https://deb.nodesource.com/setup_22.x -o /tmp/nodesource_setup.sh \
 
 # Install packages
 # pdo to run unit tests with sqlite
-RUN apt update && apt install -y php8.3 php8.3-curl php8.3-xml php8.3-mbstring php8.3-pdo php8.3-sqlite3 php8.3-gd php8.3-zip php8.3-imagick \
+RUN apt update && apt install -y php8.4 php8.4-curl php8.4-xml php8.4-mbstring php8.4-pdo php8.4-sqlite3 php8.4-gd php8.4-zip php8.4-imagick \
     && apt-get install --quiet --yes --no-install-recommends nodejs \
     && npm install yarn --global \
     && npm install -g bower \
